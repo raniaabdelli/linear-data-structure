@@ -1,0 +1,26 @@
+ALGORITHM repeated_elm
+VAR
+    tab1 , tab2 : ARRAY_OF INTEGER[10];
+    SUM : INTEGER := 0
+    I, J : INTEGER 
+BEGIN
+    FOR i FROM 0 TO tab1.length STEP 1  DO
+        write ("enter element of tab1[",i,"]")
+        read (tab1[i])   
+    END_FOR
+    FOR j FROM 0 TO tab2.length STEP 1  DO
+        write ("enter element of tab2[",j,"]")
+        read (tab2[j])
+    END_FOR
+    FOR i FROM 0 TO tab1.length STEP 1  DO
+        FOR j FROM 0 TO tab2.length STEP 1  DO
+            if (tab1[i]=tab2[j]) THEN
+                SUM:=SUM+2*tab1[i]
+                break;
+            else
+                continue
+            END_IF
+        END_FOR
+    END_FOR
+    write (SUM)
+END
